@@ -4,11 +4,11 @@ import websockets
 
 async def server(websocket, path):
     # Handle incoming messages from the client
-    async for message in websocket:
-        print(f"Received message from client: {message}")
+    async for user_message in websocket:
+        print(f"Received message from client: {user_message}")
 
         # Send a response back to the client
-        response = f"Server received: {message}"
+        response = f"Server received: {user_message}"
         await websocket.send(response)
 
 

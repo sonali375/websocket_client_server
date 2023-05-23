@@ -4,9 +4,9 @@ import websockets
 
 async def client():
     async with websockets.connect('ws://localhost:8000') as websocket:
-        message = "Kl intern!"
-        await websocket.send(message)
-        print(f"Sent message to server: {message}")
+        user_message = input("enter a message:- ")
+        await websocket.send(user_message)
+        print(f"Sent message to server: {user_message}")
 
         # Receive and print the response from the server
         response = await websocket.recv()
